@@ -10,11 +10,28 @@
       scroll-behavior: smooth;
     }
 
+    :root {
+      --bg-1: #0b1020;
+      --bg-2: #111827;
+      --bg-3: #1e293b;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --soft: #94a3b8;
+      --line: rgba(255, 255, 255, 0.08);
+      --card: rgba(255, 255, 255, 0.05);
+      --blue: #3b82f6;
+      --blue-hover: #2563eb;
+      --glow: rgba(59, 130, 246, 0.35);
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
-      color: white;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(59,130,246,0.18), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(99,102,241,0.14), transparent 28%),
+        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
       line-height: 1.6;
     }
 
@@ -22,9 +39,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(11, 16, 32, 0.72);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-container {
@@ -38,11 +55,12 @@
 
     .logo {
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      letter-spacing: 0.3px;
     }
 
     .nav-links a {
-      color: #cbd5e1;
+      color: var(--muted);
       text-decoration: none;
       margin-left: 18px;
       transition: color 0.2s ease;
@@ -55,29 +73,62 @@
     section {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 80px 24px;
+      padding: 88px 24px;
     }
 
     .hero {
-      min-height: 90vh;
+      min-height: 92vh;
       display: flex;
       align-items: center;
+      position: relative;
     }
 
     .hero-content {
-      max-width: 700px;
+      max-width: 760px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: 3.6rem;
+      font-size: 4rem;
       margin: 0 0 16px;
-      line-height: 1.1;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
     }
 
     .hero p {
-      font-size: 1.15rem;
-      color: #cbd5e1;
+      font-size: 1.12rem;
+      color: var(--muted);
       margin-bottom: 28px;
+      max-width: 700px;
+    }
+
+    .typed-line {
+      color: #93c5fd;
+      min-height: 1.6em;
+      font-weight: 600;
+      margin-bottom: 26px;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 1ch;
+      animation: blink 0.9s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
     }
 
     .buttons a {
@@ -85,92 +136,173 @@
       margin-right: 12px;
       margin-bottom: 12px;
       padding: 12px 20px;
-      border-radius: 12px;
+      border-radius: 14px;
       text-decoration: none;
       color: white;
       font-weight: 600;
-      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
 
     .primary-btn {
-      background: #2563eb;
+      background: var(--blue);
+      box-shadow: 0 10px 30px var(--glow);
     }
 
     .primary-btn:hover {
-      background: #1d4ed8;
+      background: var(--blue-hover);
       transform: translateY(-2px);
     }
 
     .secondary-btn {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
     }
 
     .secondary-btn:hover {
-      opacity: 0.9;
+      opacity: 0.95;
       transform: translateY(-2px);
     }
 
     h2 {
       font-size: 2rem;
       margin-bottom: 16px;
+      letter-spacing: -0.02em;
     }
 
     .section-text {
-      color: #cbd5e1;
-      max-width: 750px;
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 1.03rem;
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+    .single-project {
       margin-top: 28px;
     }
 
-    .card {
+    .project-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.04));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(96,165,250,0.55);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.26);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 1.45rem;
+    }
+
+    .project-tag {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.25);
+      color: #bfdbfe;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .project-desc {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 1rem;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
       background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 22px;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(96,165,250,0.6);
-    }
-
-    .card h3 {
-      margin-top: 0;
+    .project-actions a {
+      display: inline-block;
+      margin-right: 10px;
       margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #cbd5e1;
-      font-size: 0.98rem;
-    }
-
-    .card a {
-      color: #93c5fd;
+      padding: 10px 16px;
+      border-radius: 12px;
       text-decoration: none;
       font-weight: 600;
+      color: white;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .project-actions a:first-child {
+      background: var(--blue);
+    }
+
+    .project-actions a:last-child {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .project-actions a:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .learning-card {
+      margin-top: 26px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .learning-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .learning-list li {
+      margin-bottom: 10px;
     }
 
     footer {
       text-align: center;
-      padding: 32px 20px 48px;
-      color: #94a3b8;
+      padding: 32px 20px 52px;
+      color: var(--soft);
       font-size: 0.95rem;
     }
 
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2.6rem;
+        font-size: 2.8rem;
       }
 
       .nav-links {
         display: none;
+      }
+
+      section {
+        padding: 72px 20px;
       }
     }
   </style>
@@ -181,7 +313,8 @@
       <div class="logo">Felix</div>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Project</a>
+        <a href="#learning">Now</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -189,13 +322,17 @@
 
   <section class="hero">
     <div class="hero-content">
+      <div class="hero-badge">HKU Student · Statistics · Tech Explorer</div>
       <h1>Hi, I’m Felix.</h1>
+      <div class="typed-line">
+        <span id="typed-text"></span><span class="cursor">|</span>
+      </div>
       <p>
-        I’m an undergraduate student at HKU, learning statistics, building projects,
-        and exploring technology, AI, and open-source tools.
+        I’m an undergraduate student at HKU interested in statistics, technology,
+        open-source tools, and building clean, useful digital experiences.
       </p>
       <div class="buttons">
-        <a class="primary-btn" href="#projects">View Projects</a>
+        <a class="primary-btn" href="#projects">View Project</a>
         <a class="secondary-btn" href="#contact">Contact Me</a>
       </div>
     </div>
@@ -204,36 +341,62 @@
   <section id="about">
     <h2>About Me</h2>
     <p class="section-text">
-      I’m interested in statistics, technology, and building useful digital tools.
-      I enjoy turning ideas into practical projects, learning by doing, and sharing
-      my work in a clear and thoughtful way.
+      I enjoy learning by building. My interests sit at the intersection of
+      statistics, software, and thoughtful product design. I like tools that are
+      lightweight, practical, and pleasant to use — not bloated little chaos goblins
+      pretending to be productivity software.
     </p>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>Featured Project</h2>
     <p class="section-text">
-      Here are a few things I’ve been working on.
+      Here is the main project I’m currently showcasing.
     </p>
 
-    <div class="projects-grid">
-      <div class="card">
-        <h3>iOS Markdown Editor</h3>
-        <p>A lightweight Markdown reading and editing experience designed for iOS.</p>
-        <a href="#">View Project</a>
-      </div>
+    <div class="single-project">
+      <div class="project-card">
+        <div class="project-top">
+          <div>
+            <h3 class="project-title">Markdown Flow</h3>
+          </div>
+          <div class="project-tag">Open Source</div>
+        </div>
 
-      <div class="card">
-        <h3>AI in Healthcare Poster</h3>
-        <p>A group project exploring AI chatbots and virtual assistants in healthcare.</p>
-        <a href="#">View Project</a>
-      </div>
+        <p class="project-desc">
+          A lightweight Markdown editor and reader focused on a clean local experience.
+          It is designed around simplicity, usability, and a smoother way to work with
+          Markdown content on iOS.
+        </p>
 
-      <div class="card">
-        <h3>Statistics Notes</h3>
-        <p>Structured learning notes and summaries from statistics coursework and practice.</p>
-        <a href="#">View Project</a>
+        <div class="stack">
+          <span class="chip">iOS</span>
+          <span class="chip">Markdown</span>
+          <span class="chip">Open Source</span>
+          <span class="chip">Lightweight Design</span>
+        </div>
+
+        <div class="project-actions">
+          <a href="https://github.com/Felix-Li-0306/markdown-flow" target="_blank">View on GitHub</a>
+          <a href="https://github.com/Felix-Li-0306/markdown-flow" target="_blank">Repository Link</a>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section id="learning">
+    <h2>What I’m Learning Now</h2>
+    <p class="section-text">
+      I’m currently exploring topics that help me build stronger technical and analytical foundations.
+    </p>
+
+    <div class="learning-card">
+      <ul class="learning-list">
+        <li>Statistics and quantitative thinking</li>
+        <li>Open-source project development and GitHub workflows</li>
+        <li>Designing cleaner and more useful digital tools</li>
+        <li>Building personal projects with clearer structure and better UX</li>
+      </ul>
     </div>
   </section>
 
@@ -244,12 +407,52 @@
     </p>
     <div class="buttons">
       <a class="primary-btn" href="https://github.com/Felix-Li-0306" target="_blank">GitHub</a>
-      <a class="secondary-btn" href="mailto:lizhuofei0306@gmail.com">Email Me</a>
+      <a class="secondary-btn" href="mailto:your-email@example.com">Email Me</a>
     </div>
   </section>
 
   <footer>
     © 2026 Felix. Built with GitHub Pages.
   </footer>
+
+  <script>
+    const phrases = [
+      "I build lightweight tools.",
+      "I learn by making real projects.",
+      "I care about clean design and practical software."
+    ];
+
+    const typedText = document.getElementById("typed-text");
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      const currentPhrase = phrases[phraseIndex];
+
+      if (!isDeleting) {
+        typedText.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentPhrase.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1400);
+          return;
+        }
+      } else {
+        typedText.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+      }
+
+      setTimeout(typeEffect, isDeleting ? 40 : 75);
+    }
+
+    typeEffect();
+  </script>
 </body>
 </html>
