@@ -5,71 +5,251 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Felix | Personal Website</title>
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
       color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .card {
-      text-align: center;
-      padding: 40px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      max-width: 700px;
-      width: 90%;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1rem;
       line-height: 1.6;
-      color: #cbd5e1;
     }
 
-    .buttons {
-      margin-top: 24px;
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 18px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 3.6rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      margin-bottom: 28px;
     }
 
     .buttons a {
       display: inline-block;
-      margin: 8px;
+      margin-right: 12px;
+      margin-bottom: 12px;
       padding: 12px 20px;
       border-radius: 12px;
       text-decoration: none;
       color: white;
-      background: #2563eb;
-      transition: transform 0.2s ease, background 0.2s ease;
+      font-weight: 600;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
     }
 
-    .buttons a:hover {
+    .primary-btn {
+      background: #2563eb;
+    }
+
+    .primary-btn:hover {
       background: #1d4ed8;
       transform: translateY(-2px);
+    }
+
+    .secondary-btn {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .secondary-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .section-text {
+      color: #cbd5e1;
+      max-width: 750px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(96,165,250,0.6);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 0.98rem;
+    }
+
+    .card a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px 48px;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Felix</h1>
-    <p>
-      Undergraduate student at HKU, learning statistics, building projects,
-      and exploring technology.
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Felix</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hi, I’m Felix.</h1>
+      <p>
+        I’m an undergraduate student at HKU, learning statistics, building projects,
+        and exploring technology, AI, and open-source tools.
+      </p>
+      <div class="buttons">
+        <a class="primary-btn" href="#projects">View Projects</a>
+        <a class="secondary-btn" href="#contact">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="section-text">
+      I’m interested in statistics, technology, and building useful digital tools.
+      I enjoy turning ideas into practical projects, learning by doing, and sharing
+      my work in a clear and thoughtful way.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="section-text">
+      Here are a few things I’ve been working on.
+    </p>
+
+    <div class="projects-grid">
+      <div class="card">
+        <h3>iOS Markdown Editor</h3>
+        <p>A lightweight Markdown reading and editing experience designed for iOS.</p>
+        <a href="#">View Project</a>
+      </div>
+
+      <div class="card">
+        <h3>AI in Healthcare Poster</h3>
+        <p>A group project exploring AI chatbots and virtual assistants in healthcare.</p>
+        <a href="#">View Project</a>
+      </div>
+
+      <div class="card">
+        <h3>Statistics Notes</h3>
+        <p>Structured learning notes and summaries from statistics coursework and practice.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="section-text">
+      You can find me on GitHub or reach me by email.
     </p>
     <div class="buttons">
-      <a href="https://github.com/your-github-username" target="_blank">GitHub</a>
-      <a href="mailto:your-email@example.com">Contact</a>
+      <a class="primary-btn" href="https://github.com/Felix-Li-0306" target="_blank">GitHub</a>
+      <a class="secondary-btn" href="mailto:lizhuofei0306@gmail.com">Email Me</a>
     </div>
-  </div>
+  </section>
+
+  <footer>
+    © 2026 Felix. Built with GitHub Pages.
+  </footer>
 </body>
 </html>
