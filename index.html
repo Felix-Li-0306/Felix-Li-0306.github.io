@@ -11,122 +11,146 @@
     }
 
     :root {
-      --bg-1: #081120;
-      --bg-2: #0f172a;
-      --bg-3: #172554;
-      --panel: rgba(255, 255, 255, 0.06);
-      --panel-strong: rgba(255, 255, 255, 0.09);
-      --line: rgba(255, 255, 255, 0.1);
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --soft: #94a3b8;
-      --blue: #3b82f6;
-      --blue-hover: #2563eb;
-      --glow: rgba(59, 130, 246, 0.28);
+      --bg: #fcfcfd;
+      --bg-soft: #f6f7fb;
+      --card: rgba(255, 255, 255, 0.82);
+      --card-strong: rgba(255, 255, 255, 0.94);
+      --text: #111827;
+      --text-soft: #4b5563;
+      --text-muted: #6b7280;
+      --line: rgba(17, 24, 39, 0.08);
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --shadow-hover: 0 18px 40px rgba(15, 23, 42, 0.1);
+      --accent: #6d7df7;
+      --accent-soft: #eef1ff;
+      --accent-hover: #5869ee;
+      --lavender: #f3efff;
+      --pink: #fff1f7;
       --max-width: 1120px;
+      --radius: 24px;
     }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 10%, rgba(59,130,246,0.18), transparent 24%),
-        radial-gradient(circle at 85% 18%, rgba(99,102,241,0.18), transparent 26%),
-        radial-gradient(circle at 50% 100%, rgba(14,165,233,0.12), transparent 30%),
-        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 45%, #111827 100%);
+        radial-gradient(circle at top left, #fff6fb 0%, transparent 28%),
+        radial-gradient(circle at 85% 12%, #f1f2ff 0%, transparent 26%),
+        linear-gradient(180deg, #ffffff 0%, #fafbff 52%, #f8f9fc 100%);
       line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(8, 17, 32, 0.72);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.72);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.06);
     }
 
-    .nav-container {
+    .nav-inner {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 16px 24px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
-    .logo {
+    .brand {
+      font-size: 1rem;
       font-weight: 700;
-      letter-spacing: 0.2px;
-      font-size: 1.02rem;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
     }
 
     .nav-links a {
-      color: var(--muted);
       text-decoration: none;
-      margin-left: 20px;
+      color: var(--text-soft);
+      font-size: 0.95rem;
       transition: color 0.2s ease;
-      font-size: 0.96rem;
     }
 
     .nav-links a:hover {
-      color: white;
+      color: var(--text);
     }
 
     section {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 88px 24px;
+      padding: 92px 0;
     }
 
     .hero {
-      min-height: 95vh;
+      min-height: calc(100vh - 70px);
       display: flex;
       align-items: center;
+      padding-top: 32px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.35fr 0.9fr;
-      gap: 36px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 38px;
       align-items: center;
       width: 100%;
     }
 
-    .hero-badge {
+    .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 9px 15px;
+      padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--line);
-      color: var(--muted);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(17, 24, 39, 0.06);
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+      color: var(--text-soft);
       font-size: 0.92rem;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 4.15rem;
-      line-height: 1.02;
-      margin: 0 0 16px;
-      letter-spacing: -0.04em;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.1rem;
-      max-width: 690px;
       margin-bottom: 18px;
     }
 
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: 4.2rem;
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 680px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.08rem;
+      color: var(--text-soft);
+      max-width: 660px;
+      margin: 0 0 18px;
+    }
+
     .typed-line {
-      color: #93c5fd;
-      font-weight: 700;
-      font-size: 1.02rem;
       min-height: 1.6em;
-      margin-bottom: 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 24px;
     }
 
     .cursor {
@@ -136,163 +160,202 @@
     }
 
     @keyframes blink {
-      50% { opacity: 0; }
+      50% {
+        opacity: 0;
+      }
     }
 
-    .buttons {
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
       margin-top: 28px;
     }
 
-    .buttons a {
-      display: inline-block;
-      margin-right: 12px;
-      margin-bottom: 12px;
-      padding: 12px 20px;
-      border-radius: 14px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
-      color: white;
+      border-radius: 999px;
+      padding: 12px 18px;
       font-weight: 600;
-      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      font-size: 0.96rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
     }
 
-    .primary-btn {
-      background: var(--blue);
-      box-shadow: 0 10px 30px var(--glow);
-    }
-
-    .primary-btn:hover {
-      background: var(--blue-hover);
+    .btn:hover {
       transform: translateY(-2px);
     }
 
-    .secondary-btn {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+    .btn-primary {
+      background: var(--text);
+      color: white;
+      box-shadow: 0 10px 24px rgba(17, 24, 39, 0.12);
     }
 
-    .secondary-btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
+    .btn-primary:hover {
+      background: #1f2937;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--text);
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
     }
 
     .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 30px;
-      box-shadow: 0 16px 50px rgba(0,0,0,0.22);
       position: relative;
+      padding: 26px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.82));
+      border: 1px solid rgba(17, 24, 39, 0.06);
+      box-shadow: var(--shadow);
       overflow: hidden;
     }
 
     .hero-card::before {
       content: "";
       position: absolute;
-      inset: -30% auto auto -20%;
+      inset: auto -60px -60px auto;
       width: 180px;
       height: 180px;
-      background: radial-gradient(circle, rgba(59,130,246,0.35), transparent 70%);
+      background: radial-gradient(circle, rgba(109,125,247,0.12), transparent 70%);
       pointer-events: none;
     }
 
-    .avatar {
-      width: 82px;
-      height: 82px;
-      border-radius: 22px;
+    .avatar-wrap {
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #2563eb, #38bdf8);
-      box-shadow: 0 12px 30px rgba(37,99,235,0.28);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
-    .hero-card h3 {
+    .avatar-frame {
+      width: 220px;
+      height: 220px;
+      border-radius: 28px;
+      padding: 10px;
+      background: linear-gradient(135deg, #ffffff, #f7f3ff);
+      border: 1px solid rgba(17, 24, 39, 0.06);
+      box-shadow: 0 12px 30px rgba(109, 125, 247, 0.1);
+    }
+
+    .avatar-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+
+    .mini-title {
+      font-size: 1.02rem;
+      font-weight: 700;
       margin: 0 0 10px;
-      font-size: 1.25rem;
     }
 
-    .hero-card p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 0.98rem;
+    .mini-text {
+      margin: 0 0 16px;
+      color: var(--text-soft);
+      font-size: 0.96rem;
     }
 
     .mini-list {
       display: grid;
-      gap: 12px;
+      gap: 10px;
     }
 
     .mini-item {
       padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: var(--muted);
-      font-size: 0.95rem;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #ffffff, #fafaff);
+      border: 1px solid rgba(17, 24, 39, 0.06);
+      color: var(--text-soft);
+      font-size: 0.94rem;
     }
 
-    h2 {
+    .section-heading {
+      margin-bottom: 18px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 10px;
       font-size: 2rem;
-      margin: 0 0 16px;
-      letter-spacing: -0.02em;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
     }
 
-    .section-text {
-      color: var(--muted);
-      max-width: 760px;
-      font-size: 1.03rem;
+    .section-heading p {
+      margin: 0;
+      color: var(--text-soft);
+      max-width: 720px;
+    }
+
+    .about-card,
+    .project-card,
+    .now-card,
+    .contact-card {
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--card-strong), var(--card));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .about-card {
+      padding: 26px;
+      max-width: 840px;
+    }
+
+    .about-card p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 1rem;
     }
 
     .project-card {
-      margin-top: 28px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.045));
-      border: 1px solid var(--line);
-      border-radius: 24px;
       padding: 30px;
-      box-shadow: 0 14px 42px rgba(0,0,0,0.2);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
 
     .project-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(96,165,250,0.55);
-      box-shadow: 0 18px 48px rgba(0,0,0,0.24);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(109, 125, 247, 0.18);
     }
 
-    .project-head {
+    .project-top {
       display: flex;
-      justify-content: space-between;
-      gap: 20px;
       align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
       flex-wrap: wrap;
       margin-bottom: 14px;
     }
 
     .project-title {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
     }
 
     .project-tag {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(59,130,246,0.12);
-      border: 1px solid rgba(59,130,246,0.25);
-      color: #bfdbfe;
-      font-size: 0.9rem;
-      font-weight: 700;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.88rem;
+      border: 1px solid rgba(109, 125, 247, 0.1);
     }
 
     .project-desc {
-      color: var(--muted);
-      margin-bottom: 18px;
+      margin: 0 0 18px;
+      color: var(--text-soft);
     }
 
-    .stack {
+    .project-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -302,327 +365,280 @@
     .chip {
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--line);
-      color: var(--muted);
+      background: #ffffff;
+      border: 1px solid rgba(17, 24, 39, 0.06);
+      color: var(--text-soft);
       font-size: 0.9rem;
     }
 
-    .project-actions a {
-      display: inline-block;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      padding: 10px 16px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      color: white;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+    .project-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .project-actions a:first-child {
-      background: var(--blue);
-    }
-
-    .project-actions a:last-child {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .project-actions a:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
-    }
-
-    .journey-grid {
-      display: grid;
-      gap: 16px;
-      margin-top: 28px;
-    }
-
-    .journey-item {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px 22px;
-      position: relative;
-    }
-
-    .journey-item h3 {
-      margin: 0 0 8px;
-      font-size: 1.06rem;
-    }
-
-    .journey-item p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    .learning-card,
-    .contact-card {
-      margin-top: 26px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 22px;
+    .now-card {
       padding: 24px;
+      max-width: 820px;
     }
 
-    .learning-list {
-      margin: 14px 0 0;
+    .now-list {
+      margin: 0;
       padding-left: 18px;
-      color: var(--muted);
+      color: var(--text-soft);
     }
 
-    .learning-list li {
+    .now-list li {
       margin-bottom: 10px;
+    }
+
+    .contact-card {
+      padding: 24px;
+      max-width: 860px;
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
-      margin-top: 20px;
+      margin-bottom: 18px;
     }
 
     .contact-item {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
       padding: 18px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid rgba(17, 24, 39, 0.06);
     }
 
     .contact-label {
-      color: var(--soft);
-      font-size: 0.88rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
       margin-bottom: 6px;
     }
 
     .contact-value,
     .contact-value a {
-      color: white;
       text-decoration: none;
+      color: var(--text);
       font-weight: 600;
       word-break: break-word;
     }
 
     footer {
+      padding: 30px 0 54px;
+      color: var(--text-muted);
+      font-size: 0.94rem;
       text-align: center;
-      padding: 36px 20px 56px;
-      color: var(--soft);
-      font-size: 0.95rem;
     }
 
-    @media (max-width: 900px) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 960px) {
       .hero-grid {
         grid-template-columns: 1fr;
       }
 
       .hero h1 {
-        font-size: 3rem;
+        font-size: 3.1rem;
+      }
+
+      .avatar-frame {
+        width: 180px;
+        height: 180px;
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 720px) {
       .nav-links {
         display: none;
       }
 
       section {
-        padding: 72px 20px;
+        padding: 74px 0;
       }
 
       .hero {
         min-height: auto;
-        padding-top: 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
+      }
+
+      .container,
+      .nav-inner {
+        padding-left: 20px;
+        padding-right: 20px;
       }
     }
   </style>
 </head>
 <body>
   <nav>
-    <div class="nav-container">
-      <div class="logo">Felix</div>
+    <div class="nav-inner">
+      <div class="brand">Felix</div>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#projects">Project</a>
-        <a href="#journey">Journey</a>
-        <a href="#learning">Now</a>
+        <a href="#project">Project</a>
+        <a href="#now">Now</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge">HKU Student · Statistics · Builder</div>
-        <h1>Hi, I’m Felix.</h1>
-        <div class="typed-line">
-          <span id="typed-text"></span><span class="cursor">|</span>
-        </div>
-        <p>
-          I’m an undergraduate student at HKU interested in statistics, software,
-          thoughtful digital design, and open-source tools. I like building things
-          that are clean, practical, and genuinely pleasant to use.
-        </p>
-        <div class="buttons">
-          <a class="primary-btn" href="#projects">View Project</a>
-          <a class="secondary-btn" href="#contact">Contact Me</a>
-        </div>
-      </div>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">HKU · Minimal tools · Thoughtful design</div>
+          <h1>Statistics, software, and simple tools.</h1>
+          <p class="hero-subtitle">
+            I’m Felix, an HKU student building thoughtful digital experiences with a focus on clarity, usefulness, and clean design.
+          </p>
+          <div class="typed-line">
+            <span id="typed-text"></span><span class="cursor">|</span>
+          </div>
 
-      <div class="hero-card">
-        <div class="avatar">F</div>
-        <h3>Current Focus</h3>
-        <p>
-          Learning deeply, building carefully, and turning small ideas into useful software.
-        </p>
-        <div class="mini-list">
-          <div class="mini-item">📊 Statistics and quantitative thinking</div>
-          <div class="mini-item">🛠️ Lightweight product and tool design</div>
-          <div class="mini-item">🌐 Open-source workflows and GitHub projects</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p class="section-text">
-      I enjoy learning by building. My interests sit around the intersection of
-      statistics, software, and user experience. I’m especially drawn to tools that
-      feel simple, focused, and useful — not giant digital Swiss army knives with
-      seventeen broken corkscrews.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Featured Project</h2>
-    <p class="section-text">
-      This is the main project I’m currently showcasing on my personal site.
-    </p>
-
-    <div class="project-card">
-      <div class="project-head">
-        <div>
-          <h3 class="project-title">Markdown Flow</h3>
-        </div>
-        <div class="project-tag">Open Source</div>
-      </div>
-
-      <p class="project-desc">
-        Markdown Flow is a lightweight Markdown editor and reader focused on a cleaner
-        local experience. It is built around simplicity, usability, and a more pleasant
-        way to work with Markdown content on iOS.
-      </p>
-
-      <div class="stack">
-        <span class="chip">iOS</span>
-        <span class="chip">Markdown</span>
-        <span class="chip">Open Source</span>
-        <span class="chip">Lightweight UX</span>
-      </div>
-
-      <div class="project-actions">
-        <a href="https://github.com/Felix-Li-0306/markdown-flow" target="_blank">View on GitHub</a>
-        <a href="#contact">Let’s Connect</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="journey">
-    <h2>Journey</h2>
-    <p class="section-text">
-      A few themes that describe how I’m currently growing and what I’m trying to build toward.
-    </p>
-
-    <div class="journey-grid">
-      <div class="journey-item">
-        <h3>Learning through projects</h3>
-        <p>
-          I prefer turning concepts into working things. Building helps me understand ideas
-          more clearly than just reading them in the abstract.
-        </p>
-      </div>
-
-      <div class="journey-item">
-        <h3>Balancing analysis and design</h3>
-        <p>
-          I’m interested not only in whether something works, but also whether it feels clear,
-          efficient, and enjoyable to use.
-        </p>
-      </div>
-
-      <div class="journey-item">
-        <h3>Growing in public</h3>
-        <p>
-          Open-source work gives me a way to document progress, share experiments, and gradually
-          build a portfolio with real substance.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="learning">
-    <h2>What I’m Learning Now</h2>
-    <p class="section-text">
-      I’m currently exploring topics that strengthen both my technical and analytical foundations.
-    </p>
-
-    <div class="learning-card">
-      <ul class="learning-list">
-        <li>Statistics and quantitative reasoning</li>
-        <li>Open-source development and GitHub workflows</li>
-        <li>Cleaner interface design and practical product thinking</li>
-        <li>Building personal tools with stronger structure and UX</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p class="section-text">
-      The easiest way to reach me is through GitHub or email.
-    </p>
-
-    <div class="contact-card">
-      <div class="contact-grid">
-        <div class="contact-item">
-          <div class="contact-label">GitHub</div>
-          <div class="contact-value">
-            <a href="https://github.com/Felix-Li-0306" target="_blank">github.com/Felix-Li-0306</a>
+          <div class="button-row">
+            <a class="btn btn-primary" href="#project">View Project</a>
+            <a class="btn btn-secondary" href="#contact">Contact</a>
           </div>
         </div>
 
-        <div class="contact-item">
-          <div class="contact-label">Email</div>
-          <div class="contact-value">
-            <a href="mailto:lizhuofei0306@gmail.com">lizhuofei0306@gmail.com</a>
+        <div class="hero-card reveal">
+          <div class="avatar-wrap">
+            <div class="avatar-frame">
+              <img src="avatar.png" alt="Felix avatar" />
+            </div>
+          </div>
+          <h3 class="mini-title">Current Focus</h3>
+          <p class="mini-text">
+            Building lighter, cleaner tools and learning through real projects rather than decorative techno-fog.
+          </p>
+          <div class="mini-list">
+            <div class="mini-item">Designing focused digital experiences</div>
+            <div class="mini-item">Exploring software with a practical mindset</div>
+            <div class="mini-item">Sharing work through open-source projects</div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="buttons" style="margin-top: 22px;">
-        <a class="primary-btn" href="mailto:lizhuofei0306@gmail.com">Email Me</a>
-        <a class="secondary-btn" href="https://github.com/Felix-Li-0306" target="_blank">Visit GitHub</a>
+    <section id="about">
+      <div class="section-heading reveal">
+        <h2>About</h2>
+        <p>A short introduction, minus the ceremonial corporate incense.</p>
       </div>
-    </div>
-  </section>
 
-  <footer>
+      <div class="about-card reveal">
+        <p>
+          I’m a student at HKU interested in software, thoughtful interfaces, and building useful tools that feel simple and well made. I like work that is clear, practical, and quietly polished rather than overloaded for the sake of looking impressive.
+        </p>
+      </div>
+    </section>
+
+    <section id="project">
+      <div class="section-heading reveal">
+        <h2>Featured Project</h2>
+        <p>A single project, presented properly, beats a graveyard of half-explained cards.</p>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div>
+            <h3 class="project-title">Markdown Flow</h3>
+          </div>
+          <div class="project-tag">Open Source</div>
+        </div>
+
+        <p class="project-desc">
+          Markdown Flow was built around a simple idea: Markdown tools should feel lightweight, focused, and pleasant to use. Instead of adding noise, the goal is to create a cleaner local editing and reading experience with an emphasis on simplicity and design restraint.
+        </p>
+
+        <div class="project-meta">
+          <span class="chip">iOS</span>
+          <span class="chip">Markdown</span>
+          <span class="chip">Lightweight UX</span>
+          <span class="chip">Open Source</span>
+        </div>
+
+        <div class="project-buttons">
+          <a class="btn btn-primary" href="https://github.com/Felix-Li-0306/markdown-flow" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a class="btn btn-secondary" href="#contact">Let’s Connect</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="now">
+      <div class="section-heading reveal">
+        <h2>Now</h2>
+        <p>What I’m currently paying attention to.</p>
+      </div>
+
+      <div class="now-card reveal">
+        <ul class="now-list">
+          <li>Designing tools that stay simple instead of mutating into feature monsters</li>
+          <li>Improving software and product thinking through real project work</li>
+          <li>Exploring cleaner workflows for personal and open-source development</li>
+          <li>Learning how clarity in design can make technology feel more human</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-heading reveal">
+        <h2>Contact</h2>
+        <p>The clean and civilized ways to reach me.</p>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">
+              <a href="https://github.com/Felix-Li-0306" target="_blank" rel="noopener noreferrer">github.com/Felix-Li-0306</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              <a href="mailto:lizhuofei0306@gmail.com">lizhuofei0306@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <a class="btn btn-primary" href="mailto:lizhuofei0306@gmail.com">Email Me</a>
+          <a class="btn btn-secondary" href="https://github.com/Felix-Li-0306" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
     © 2026 Felix. Built with GitHub Pages.
   </footer>
 
   <script>
     const phrases = [
-      "I build lightweight tools.",
-      "I learn by making real projects.",
-      "I care about clean design and practical software."
+      "Clean design over noisy complexity.",
+      "Useful tools over bloated software.",
+      "Simple ideas, carefully built."
     ];
 
     const typedText = document.getElementById("typed-text");
@@ -639,7 +655,7 @@
 
         if (charIndex === currentPhrase.length) {
           isDeleting = true;
-          setTimeout(typeEffect, 1400);
+          setTimeout(typeEffect, 1300);
           return;
         }
       } else {
@@ -652,10 +668,22 @@
         }
       }
 
-      setTimeout(typeEffect, isDeleting ? 40 : 75);
+      setTimeout(typeEffect, isDeleting ? 35 : 65);
     }
 
     typeEffect();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>
