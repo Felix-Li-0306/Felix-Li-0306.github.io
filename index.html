@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#fcfcfd" />
   <title>Felix | Personal Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -194,7 +197,7 @@
     body {
       position: relative;
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
       background:
         radial-gradient(circle at top left, var(--bg-gradient-top-left) 0%, transparent 28%),
@@ -214,7 +217,7 @@
         radial-gradient(circle at 20% 24%, var(--theme-wash-a) 0%, transparent 42%),
         linear-gradient(135deg, transparent 12%, var(--theme-wash-b) 52%, transparent 88%);
       opacity: 0;
-      animation: theme-wash 1850ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      animation: theme-wash 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     @keyframes theme-wash {
@@ -263,6 +266,7 @@
       backdrop-filter: blur(22px) saturate(1.2);
       background: var(--nav-bg);
       border-bottom: 1px solid var(--nav-line);
+      isolation: isolate;
     }
 
     .nav-inner {
@@ -302,6 +306,48 @@
     .nav-links a:hover {
       color: var(--text);
       text-shadow: 0 0 18px var(--accent-glow);
+    }
+
+    .nav-links a.active {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      color: var(--text);
+    }
+
+    .hamburger-line {
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger.open .hamburger-line:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open .hamburger-line:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-nav {
+      display: none;
     }
 
     .theme-toggle {
@@ -529,9 +575,38 @@
     }
 
     .about-card p {
-      margin: 0;
+      margin: 0 0 20px;
       color: var(--text-soft);
       font-size: 1rem;
+    }
+
+    .about-card p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .skills-heading {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 20px 0 12px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-chip {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--chip-bg);
+      border: 1px solid var(--chip-line);
+      color: var(--text-soft);
+      font-size: 0.88rem;
+      transition: border-color 0.48s cubic-bezier(0.25, 0.1, 0.25, 1), background 0.48s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
     .project-card {
@@ -608,12 +683,38 @@
 
     .now-list {
       margin: 0;
-      padding-left: 18px;
-      color: var(--text-soft);
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
     }
 
-    .now-list li {
-      margin-bottom: 10px;
+    .now-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, var(--mini-item-top), var(--mini-item-bottom));
+      border: 1px solid var(--mini-item-line);
+    }
+
+    .now-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      line-height: 1.5;
+    }
+
+    .now-text {
+      color: var(--text-soft);
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
+    .now-updated {
+      margin-top: 16px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
     }
 
     .contact-card {
@@ -640,6 +741,15 @@
       font-size: 0.86rem;
       color: var(--text-muted);
       margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
     }
 
     .contact-value,
@@ -648,6 +758,50 @@
       color: var(--text);
       font-weight: 600;
       word-break: break-word;
+    }
+
+    .project-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .project-more-card {
+      padding: 28px 34px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--card-strong), var(--card));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      text-decoration: none;
+      transition: transform 0.28s ease, box-shadow 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .project-more-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--project-hover-line);
+    }
+
+    .project-more-label {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .project-more-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .project-more-arrow {
+      font-size: 1.4rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
     }
 
     footer {
@@ -685,9 +839,11 @@
       .hero-card,
       .about-card,
       .project-card,
+      .project-more-card,
       .now-card,
       .contact-card,
       .chip,
+      .skill-chip,
       .contact-item,
       .avatar-frame img,
       body,
@@ -736,6 +892,47 @@
         display: none;
       }
 
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--nav-bg);
+        backdrop-filter: blur(22px) saturate(1.2);
+        border-bottom: 1px solid var(--nav-line);
+        padding: 12px 24px 18px;
+        display: none;
+        flex-direction: column;
+        gap: 2px;
+        z-index: 999;
+      }
+
+      .mobile-nav.open {
+        display: flex;
+      }
+
+      .mobile-nav a {
+        text-decoration: none;
+        color: var(--text-soft);
+        font-size: 1rem;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--line);
+        transition: color 0.28s ease;
+      }
+
+      .mobile-nav a:last-child {
+        border-bottom: none;
+      }
+
+      .mobile-nav a:hover,
+      .mobile-nav a.active {
+        color: var(--text);
+      }
+
       section {
         padding: 74px 0;
       }
@@ -772,8 +969,19 @@
           <a href="#contact">Contact</a>
         </div>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">Auto</button>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
     </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <a href="#about">About</a>
+      <a href="#project">Project</a>
+      <a href="#now">Now</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </nav>
 
   <main class="container">
@@ -824,6 +1032,20 @@
         <p>
           I’m a student at HKU interested in software, thoughtful interfaces, and building useful tools that feel simple and well made. I like work that is clear, practical, and quietly polished rather than overloaded for the sake of looking impressive.
         </p>
+        <p>
+          My background spans statistics and computer science, and I’m increasingly focused on the intersection of data, design, and real-world usability. I believe the best tools are the ones you don’t have to think about.
+        </p>
+        <div class="skills-heading">Tools &amp; Technologies</div>
+        <div class="skills-grid">
+          <span class="skill-chip">Swift</span>
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">R</span>
+          <span class="skill-chip">JavaScript</span>
+          <span class="skill-chip">HTML / CSS</span>
+          <span class="skill-chip">Git</span>
+          <span class="skill-chip">iOS Development</span>
+          <span class="skill-chip">Data Analysis</span>
+        </div>
       </div>
     </section>
 
@@ -833,29 +1055,39 @@
         <p>A single project, presented properly, beats a graveyard of half-explained cards.</p>
       </div>
 
-      <div class="project-card reveal">
-        <div class="project-top">
-          <div>
-            <h3 class="project-title">Markdown Flow</h3>
+      <div class="project-grid">
+        <div class="project-card reveal">
+          <div class="project-top">
+            <div>
+              <h3 class="project-title">Markdown Flow</h3>
+            </div>
+            <div class="project-tag">Open Source</div>
           </div>
-          <div class="project-tag">Open Source</div>
+
+          <p class="project-desc">
+            Markdown Flow was built around a simple idea: Markdown tools should feel lightweight, focused, and pleasant to use. Instead of adding noise, the goal is to create a cleaner local editing and reading experience with an emphasis on simplicity and design restraint.
+          </p>
+
+          <div class="project-meta">
+            <span class="chip">📱 iOS</span>
+            <span class="chip">📝 Markdown</span>
+            <span class="chip">✨ Lightweight UX</span>
+            <span class="chip">🔓 Open Source</span>
+          </div>
+
+          <div class="project-buttons">
+            <a class="btn btn-primary" href="https://github.com/Felix-Li-0306/markdown-flow" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <a class="btn btn-secondary" href="#contact">Let’s Connect</a>
+          </div>
         </div>
 
-        <p class="project-desc">
-          Markdown Flow was built around a simple idea: Markdown tools should feel lightweight, focused, and pleasant to use. Instead of adding noise, the goal is to create a cleaner local editing and reading experience with an emphasis on simplicity and design restraint.
-        </p>
-
-        <div class="project-meta">
-          <span class="chip">iOS</span>
-          <span class="chip">Markdown</span>
-          <span class="chip">Lightweight UX</span>
-          <span class="chip">Open Source</span>
-        </div>
-
-        <div class="project-buttons">
-          <a class="btn btn-primary" href="https://github.com/Felix-Li-0306/markdown-flow" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          <a class="btn btn-secondary" href="#contact">Let’s Connect</a>
-        </div>
+        <a class="project-more-card reveal" href="https://github.com/Felix-Li-0306" target="_blank" rel="noopener noreferrer">
+          <div>
+            <div class="project-more-label">More work</div>
+            <div class="project-more-title">See all projects on GitHub →</div>
+          </div>
+          <div class="project-more-arrow">↗</div>
+        </a>
       </div>
     </section>
 
@@ -867,11 +1099,24 @@
 
       <div class="now-card reveal">
         <ul class="now-list">
-          <li>Designing tools that stay simple instead of mutating into feature monsters</li>
-          <li>Improving software and product thinking through real project work</li>
-          <li>Exploring cleaner workflows for personal and open-source development</li>
-          <li>Learning how clarity in design can make technology feel more human</li>
+          <li class="now-item">
+            <span class="now-icon">🛠️</span>
+            <span class="now-text">Designing tools that stay simple instead of mutating into feature monsters</span>
+          </li>
+          <li class="now-item">
+            <span class="now-icon">📐</span>
+            <span class="now-text">Improving software and product thinking through real project work</span>
+          </li>
+          <li class="now-item">
+            <span class="now-icon">🔁</span>
+            <span class="now-text">Exploring cleaner workflows for personal and open-source development</span>
+          </li>
+          <li class="now-item">
+            <span class="now-icon">💡</span>
+            <span class="now-text">Learning how clarity in design can make technology feel more human</span>
+          </li>
         </ul>
+        <p class="now-updated">Last updated: April 2026</p>
       </div>
     </section>
 
@@ -884,14 +1129,20 @@
       <div class="contact-card reveal">
         <div class="contact-grid">
           <div class="contact-item">
-            <div class="contact-label">GitHub</div>
+            <div class="contact-label">
+              <svg class="contact-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </div>
             <div class="contact-value">
               <a href="https://github.com/Felix-Li-0306" target="_blank" rel="noopener noreferrer">github.com/Felix-Li-0306</a>
             </div>
           </div>
 
           <div class="contact-item">
-            <div class="contact-label">Email</div>
+            <div class="contact-label">
+              <svg class="contact-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1 5.383v5.722z"/></svg>
+              Email
+            </div>
             <div class="contact-value">
               <a href="mailto:lizhuofei0306@gmail.com">lizhuofei0306@gmail.com</a>
             </div>
@@ -977,7 +1228,7 @@
       window.clearTimeout(playThemeTransition.timeoutId);
       playThemeTransition.timeoutId = window.setTimeout(() => {
         document.body.classList.remove("theme-switching");
-      }, 1890);
+      }, 940);
     }
 
     function typeEffect() {
@@ -1037,10 +1288,48 @@
         }
       });
     }, {
-      threshold: 0.15
+      rootMargin: "0px 0px -80px 0px",
+      threshold: 0
     });
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    // Nav active state on scroll
+    const navLinksAll = document.querySelectorAll(".nav-links a, .mobile-nav a");
+    const sections = document.querySelectorAll("section[id]");
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          navLinksAll.forEach((link) => {
+            link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+          });
+        }
+      });
+    }, { rootMargin: "-30% 0px -60% 0px", threshold: 0 });
+
+    sections.forEach((s) => sectionObserver.observe(s));
+
+    // Hamburger menu
+    const hamburger = document.getElementById("hamburger");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    hamburger.addEventListener("click", () => {
+      const isOpen = mobileNav.classList.toggle("open");
+      hamburger.classList.toggle("open", isOpen);
+      hamburger.setAttribute("aria-expanded", String(isOpen));
+      mobileNav.setAttribute("aria-hidden", String(!isOpen));
+    });
+
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        mobileNav.setAttribute("aria-hidden", "true");
+      });
+    });
   </script>
 </body>
 </html>
