@@ -3,93 +3,807 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f6f7fb" />
-  <meta name="description" content="Felix Li's personal website, featuring projects, current focus, and contact links." />
-  <meta name="author" content="Felix Li" />
-  <meta property="og:title" content="Felix Li | About Me" />
-  <meta property="og:description" content="HKU student focused on statistics, software, and simple useful tools." />
+  <meta name="theme-color" content="#f3f4f6" />
+  <meta name="description" content="LI Zhuofei's professional profile: HKU Bachelor of Statistics student and Analyst Intern at CAS Investment Management." />
+  <meta name="author" content="LI Zhuofei" />
+  <meta property="og:title" content="LI Zhuofei | Professional Profile" />
+  <meta property="og:description" content="HKU Bachelor of Statistics student and Analyst Intern at CAS Investment Management." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.byfelix.xyz/" />
-  <meta property="og:image" content="https://www.byfelix.xyz/avatar.png" />
   <meta name="twitter:card" content="summary" />
-  <title>Felix | About Me</title>
+  <title>LI Zhuofei | Professional Profile</title>
   <style>
     :root {
-      --bg: #f6f7fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --accent: #2563eb;
+      --page: #f3f4f6;
+      --surface: #ffffff;
+      --surface-muted: #f8fafc;
+      --text: #111827;
+      --muted: #5f6b7a;
+      --subtle: #8a94a3;
+      --line: #d9e0e8;
+      --linkedin: #0a66c2;
+      --linkedin-dark: #084a8f;
+      --accent: #16805b;
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
+      background: var(--page);
       color: var(--text);
-      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.55;
     }
-    .container {
-      max-width: 760px;
+
+    a {
+      color: var(--linkedin);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--linkedin-dark);
+      text-decoration: underline;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      border-bottom: 1px solid rgba(217, 224, 232, 0.85);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .topbar-inner {
+      width: min(1120px, calc(100% - 40px));
+      min-height: 64px;
       margin: 0 auto;
-      padding: 24px;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 28px;
-    }
-    .top {
       display: flex;
-      gap: 18px;
       align-items: center;
-      margin-bottom: 18px;
+      justify-content: space-between;
+      gap: 24px;
     }
-    .avatar {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--line);
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: 0;
     }
-    h1 { margin: 0; font-size: 1.8rem; }
-    p { margin: 10px 0 0; color: var(--muted); }
-    h2 { margin: 20px 0 8px; font-size: 1.05rem; }
-    ul { margin: 0; padding-left: 18px; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    footer {
-      text-align: center;
-      color: var(--muted);
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      background: var(--linkedin);
+      color: #ffffff;
       font-size: 0.9rem;
-      margin-top: 14px;
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .nav a {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .nav a:hover {
+      color: var(--linkedin);
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 40px));
+      margin: 28px auto 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(280px, 0.9fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .main-column,
+    .side-column {
+      display: grid;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .profile {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .cover {
+      min-height: 180px;
+      background:
+        linear-gradient(135deg, rgba(10, 102, 194, 0.98), rgba(7, 77, 146, 0.88) 44%, rgba(22, 128, 91, 0.86)),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.22) 0 1px, transparent 1px 76px);
+      position: relative;
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 46px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.22));
+    }
+
+    .profile-body {
+      padding: 0 30px 30px;
+    }
+
+    .identity {
+      max-width: 760px;
+      margin-top: -52px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nameplate {
+      min-width: 0;
+      display: inline-block;
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      padding: 18px 20px;
+      background: #ffffff;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.11);
+    }
+
+    .kicker {
+      margin: 0 0 6px;
+      color: var(--linkedin);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--text);
+      font-size: 2.35rem;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .headline {
+      margin: 10px 0 0;
+      color: #243244;
+      font-size: 1.08rem;
+      font-weight: 600;
+    }
+
+    .summary {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .button {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 999px;
+      border: 1px solid var(--linkedin);
+      padding: 0 18px;
+      color: var(--linkedin);
+      background: #ffffff;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .button:hover {
+      background: #eef6ff;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      background: var(--linkedin);
+      color: #ffffff;
+    }
+
+    .button.primary:hover {
+      background: var(--linkedin-dark);
+      color: #ffffff;
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      flex: 0 0 auto;
+    }
+
+    .section,
+    .side-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .section-header,
+    .side-header {
+      padding: 22px 26px 12px;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--text);
+      font-size: 1.18rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .section-body {
+      padding: 0 26px 24px;
+    }
+
+    .section-body p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .resume-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+    }
+
+    .resume-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 0.36fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+      padding: 0 0 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .resume-row:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .resume-row dt {
+      color: var(--subtle);
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .resume-row dd {
+      margin: 0;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .logo-tile {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-muted);
+      color: var(--linkedin);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .timeline-content {
+      min-width: 0;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child .timeline-content {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .item-title {
+      margin: 0;
+      color: var(--text);
+      font-size: 1.02rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .item-subtitle {
+      margin: 3px 0 0;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    .item-meta {
+      margin: 4px 0 0;
+      color: var(--subtle);
+      font-size: 0.91rem;
+    }
+
+    .item-copy {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .achievement-list {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .achievement-list li + li {
+      margin-top: 6px;
+    }
+
+    .side-panel {
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+    }
+
+    .side-header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+    }
+
+    .side-body {
+      padding: 18px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .skill {
+      border: 1px solid #cfe0f4;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #f5f9ff;
+      color: #174268;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .quick-facts {
+      display: grid;
+      gap: 14px;
+    }
+
+    .fact {
+      display: grid;
+      gap: 3px;
+    }
+
+    .fact strong {
+      color: var(--text);
+      font-size: 0.94rem;
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-link {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      color: var(--text);
+    }
+
+    .contact-link:hover {
+      text-decoration: none;
+    }
+
+    .contact-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #eef6ff;
+      color: var(--linkedin);
+    }
+
+    .contact-label {
+      color: var(--subtle);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-value {
+      display: block;
+      overflow-wrap: anywhere;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    footer {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto 30px;
+      color: var(--subtle);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 860px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+
+      .side-column {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .side-column .side-panel:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-inner,
+      .page,
+      footer {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .topbar-inner {
+        min-height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .cover {
+        min-height: 132px;
+      }
+
+      .profile-body {
+        padding: 0 18px 22px;
+      }
+
+      .identity {
+        margin-top: -42px;
+      }
+
+      h1 {
+        font-size: 1.95rem;
+      }
+
+      .section-header,
+      .side-header {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .section-body {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 42px minmax(0, 1fr);
+      }
+
+      .resume-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .logo-tile {
+        width: 42px;
+        height: 42px;
+        font-size: 0.78rem;
+      }
+
+      .side-column {
+        grid-template-columns: 1fr;
+      }
+
+      .actions .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <section class="card">
-      <div class="top">
-        <img class="avatar" src="avatar.png" alt="Felix avatar" />
-        <div>
-          <h1>Felix</h1>
-          <p>HKU student focused on statistics, software, and simple useful tools.</p>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#profile" aria-label="LI Zhuofei profile home">
+        <span class="brand-mark">LI</span>
+        <span>LI Zhuofei</span>
+      </a>
+      <nav class="nav" aria-label="Profile sections">
+        <a href="#about">Basic Info</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="main-column">
+      <section class="profile" id="profile" aria-labelledby="profile-title">
+        <div class="cover" aria-hidden="true"></div>
+        <div class="profile-body">
+          <div class="identity">
+            <div class="nameplate">
+              <p class="kicker">Professional Profile</p>
+              <h1 id="profile-title">LI Zhuofei</h1>
+              <p class="headline">Bachelor of Statistics student at HKU | Analyst Intern at CAS Investment Management</p>
+            </div>
+          </div>
+
+          <p class="summary">
+            HKU student majoring in Decision Analytics, with interests in statistics, investment analysis,
+            data-driven products, and practical software tools.
+          </p>
+
+          <div class="meta-row" aria-label="Profile quick information">
+            <span class="meta-item"><span class="dot" aria-hidden="true"></span>Latest role: Analyst Intern</span>
+            <span class="meta-item">The University of Hong Kong</span>
+            <span class="meta-item">Expected graduation: June 2029</span>
+          </div>
+
+          <div class="actions">
+            <a class="button primary" href="mailto:lizhuofei0306@outlook.com">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-.4 4.25-7.07 5.3a.9.9 0 0 1-1.08 0l-7.05-5.3V6.6l7.6 5.7 7.6-5.7v1.65Z" />
+              </svg>
+              Email
+            </a>
+            <a class="button" href="https://github.com/Felix-Li-0306" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.82-.26.82-.58v-2.1c-3.34.72-4.04-1.43-4.04-1.43-.55-1.38-1.34-1.75-1.34-1.75-1.1-.75.08-.74.08-.74 1.2.09 1.84 1.24 1.84 1.24 1.08 1.84 2.82 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.92 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.4 11.4 0 0 1 12 6.72c1.02 0 2.05.14 3.02.41 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.61-5.48 5.91.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.58A12 12 0 0 0 12 .5Z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <h2>About</h2>
-      <p>I enjoy building clear, practical digital products with clean design and real-world usability.</p>
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="section-header">
+          <h2 id="about-title">Basic Information</h2>
+        </div>
+        <div class="section-body">
+          <dl class="resume-list">
+            <div class="resume-row">
+              <dt>Name</dt>
+              <dd>LI Zhuofei</dd>
+            </div>
+            <div class="resume-row">
+              <dt>Education</dt>
+              <dd>Bachelor of Statistics, The University of Hong Kong</dd>
+            </div>
+            <div class="resume-row">
+              <dt>Major</dt>
+              <dd>Decision Analytics</dd>
+            </div>
+            <div class="resume-row">
+              <dt>Latest Role</dt>
+              <dd>Analyst Intern, CAS Investment Management</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
 
-      <h2>Contact</h2>
-      <ul>
-        <li>GitHub: <a href="https://github.com/Felix-Li-0306" target="_blank" rel="noopener noreferrer">github.com/Felix-Li-0306</a></li>
-        <li>Email: <a href="mailto:lizhuofei0306@gmail.com">lizhuofei0306@gmail.com</a></li>
-      </ul>
-    </section>
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="section-header">
+          <h2 id="experience-title">Experience</h2>
+        </div>
+        <div class="section-body timeline">
+          <article class="timeline-item">
+            <div class="logo-tile" aria-hidden="true">CAS</div>
+            <div class="timeline-content">
+              <h3 class="item-title">Analyst Intern</h3>
+              <p class="item-subtitle">CAS Investment Management</p>
+              <p class="item-meta">Latest work experience</p>
+            </div>
+          </article>
 
-    <footer>© 2026 Felix</footer>
+          <article class="timeline-item">
+            <div class="logo-tile" aria-hidden="true">AI</div>
+            <div class="timeline-content">
+              <h3 class="item-title">Team Leader</h3>
+              <p class="item-subtitle">2026 LIGHT Creative Camp: AI Technology X Social Impact Innovation and Entrepreneurship Program</p>
+              <p class="item-meta">Mar 2026 - Present</p>
+              <ul class="achievement-list">
+                <li>Developed an LLM-based weather interpretation solution for elderly and vulnerable groups.</li>
+                <li>Used APIs, Python, and HTML to package data processing and user-facing interfaces.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="education" aria-labelledby="education-title">
+        <div class="section-header">
+          <h2 id="education-title">Education</h2>
+        </div>
+        <div class="section-body timeline">
+          <article class="timeline-item">
+            <div class="logo-tile" aria-hidden="true">HKU</div>
+            <div class="timeline-content">
+              <h3 class="item-title">The University of Hong Kong</h3>
+              <p class="item-subtitle">Bachelor of Statistics</p>
+              <p class="item-meta">Sep 2025 - Present | Expected graduation: June 2029</p>
+              <p class="item-copy">Major in Decision Analytics. CGPA: 3.7/4.3.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <aside class="side-column" aria-label="Profile sidebar">
+      <section class="side-panel">
+        <div class="side-header">
+          <h2>Core Skills</h2>
+        </div>
+        <div class="side-body skill-list" aria-label="Core skills">
+          <span class="skill">Statistics</span>
+          <span class="skill">Decision Analytics</span>
+          <span class="skill">Python</span>
+          <span class="skill">C++</span>
+          <span class="skill">Bash Shell</span>
+          <span class="skill">Microsoft Office</span>
+        </div>
+      </section>
+
+      <section class="side-panel">
+        <div class="side-header">
+          <h2>Profile Details</h2>
+        </div>
+        <div class="side-body quick-facts">
+          <div class="fact">
+            <strong>Professional Name</strong>
+            <span>LI Zhuofei</span>
+          </div>
+          <div class="fact">
+            <strong>Education</strong>
+            <span>Bachelor of Statistics, HKU</span>
+          </div>
+          <div class="fact">
+            <strong>Major</strong>
+            <span>Decision Analytics</span>
+          </div>
+          <div class="fact">
+            <strong>Languages</strong>
+            <span>Mandarin, English</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="side-panel" id="contact">
+        <div class="side-header">
+          <h2>Contact</h2>
+        </div>
+        <div class="side-body contact-list">
+          <a class="contact-link" href="mailto:lizhuofei0306@outlook.com">
+            <span class="contact-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-.5 3.6-7.5 5.63L4.5 7.6V6.9L12 12.53 19.5 6.9v.7Z" />
+              </svg>
+            </span>
+            <span>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">lizhuofei0306@outlook.com</span>
+            </span>
+          </a>
+
+          <a class="contact-link" href="https://github.com/Felix-Li-0306" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.82-.26.82-.58v-2.1c-3.34.72-4.04-1.43-4.04-1.43-.55-1.38-1.34-1.75-1.34-1.75-1.1-.75.08-.74.08-.74 1.2.09 1.84 1.24 1.84 1.24 1.08 1.84 2.82 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.92 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.4 11.4 0 0 1 12 6.72c1.02 0 2.05.14 3.02.41 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.61-5.48 5.91.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.58A12 12 0 0 0 12 .5Z" />
+              </svg>
+            </span>
+            <span>
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">github.com/Felix-Li-0306</span>
+            </span>
+          </a>
+        </div>
+      </section>
+    </aside>
   </main>
+
+  <footer>
+    &copy; 2026 LI Zhuofei. Built as a professional personal profile for GitHub Pages.
+  </footer>
 </body>
 </html>

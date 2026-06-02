@@ -1,21 +1,23 @@
 # Felix-Li-0306.github.io
 
-Personal website for Felix Li, published with GitHub Pages at [www.byfelix.xyz](https://www.byfelix.xyz/).
+Professional personal profile for LI Zhuofei, published with GitHub Pages at [www.byfelix.xyz](https://www.byfelix.xyz/).
 
 ## Overview
 
-This repository contains a lightweight static personal page built with plain HTML and CSS. The page introduces Felix and provides GitHub and email contact links.
+This repository contains a lightweight static personal profile built with plain HTML and CSS. The page presents LI Zhuofei in a LinkedIn-style resume format with a profile header, basic information, experience, education, skills, and contact links.
 
 ## Files
 
-- `index.html` - the full single-page website, including inline styles.
-- `avatar.png` - profile image used in the hero card and social previews.
+- `index.html` - the full single-page professional profile, including inline styles.
+- `avatar.png` - retained profile image asset, currently not displayed on the page.
 - `CNAME` - custom domain configuration for GitHub Pages.
 
 ## Features
 
-- Responsive single-card layout.
-- Basic SEO and social sharing metadata.
+- LinkedIn-inspired professional profile layout.
+- Responsive desktop and mobile structure.
+- Resume-style basic information, experience, education, skills, and contact information.
+- SEO and social sharing metadata.
 
 ## Local Preview
 
