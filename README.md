@@ -4,7 +4,7 @@ Professional personal profile for LI Zhuofei, published with GitHub Pages at [ww
 
 ## Overview
 
-This repository contains a lightweight static personal profile built with plain HTML and CSS. The page presents LI Zhuofei in a LinkedIn-style resume format with a profile header, basic information, experience, education, skills, and contact links.
+This repository contains a lightweight static personal profile built with plain HTML and CSS. The page presents LI Zhuofei in a clear resume-style order: profile, experience, education, leadership project, skills, and contact links.
 
 ## Files
 
@@ -14,9 +14,9 @@ This repository contains a lightweight static personal profile built with plain 
 
 ## Features
 
-- LinkedIn-inspired professional profile layout.
+- LinkedIn-inspired single-column resume layout.
 - Responsive desktop and mobile structure.
-- Resume-style basic information, experience, education, skills, and contact information.
+- Clear section order for experience, education, project work, skills, and contact information.
 - SEO and social sharing metadata.
 
 ## Local Preview
