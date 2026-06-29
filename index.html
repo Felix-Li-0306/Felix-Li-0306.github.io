@@ -145,8 +145,10 @@
     .metrics {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
     }
 
     .metric {
@@ -214,13 +216,14 @@
       width: 52px;
       height: 52px;
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      background: var(--surface-muted);
+      background: linear-gradient(145deg, #ffffff, var(--surface-muted));
       color: var(--accent);
       font-size: 0.86rem;
       font-weight: 800;
+      box-shadow: 0 10px 22px rgba(17, 19, 21, 0.06);
     }
 
     .entry-content {
@@ -297,8 +300,8 @@
 
     .skill {
       border: 1px solid #d6d2c4;
-      border-radius: 4px;
-      padding: 7px 10px;
+      border-radius: 999px;
+      padding: 7px 12px;
       background: #fbfaf7;
       color: #2f342f;
       font-size: 0.88rem;
@@ -318,7 +321,7 @@
       align-items: center;
       min-height: 58px;
       border: 1px solid var(--line);
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 12px;
       color: var(--text);
       background: var(--surface-muted);
