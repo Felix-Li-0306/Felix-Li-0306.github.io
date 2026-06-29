@@ -4,17 +4,17 @@ Professional personal profile for LI Zhuofei, published with GitHub Pages at [ww
 
 ## Overview
 
-This repository contains a lightweight static personal profile built with plain HTML and CSS. The page presents LI Zhuofei in a clear resume-style order: profile, experience, education, leadership project, skills, and contact links.
+This repository contains a lightweight static personal profile built with plain HTML and CSS. The page presents LI Zhuofei in a polished technical-profile order: profile, experience, education, applied AI project, capabilities, and contact links.
 
 ## Files
 
 - `index.html` - the full single-page professional profile, including inline styles.
-- `avatar.png` - retained profile image asset, currently not displayed on the page.
+- `avatar.png` - unused image asset retained in the repository.
 - `CNAME` - custom domain configuration for GitHub Pages.
 
 ## Features
 
-- LinkedIn-inspired single-column resume layout.
+- Premium single-column profile layout with a technical and business-facing tone.
 - Responsive desktop and mobile structure.
 - Clear section order for experience, education, project work, skills, and contact information.
 - SEO and social sharing metadata.
