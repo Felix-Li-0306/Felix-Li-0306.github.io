@@ -14,14 +14,13 @@
   <meta name="twitter:card" content="summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&display=swap" rel="stylesheet" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <title>LI Zhuofei</title>
   <script>document.documentElement.classList.add("js");</script>
   <style>
     :root {
       --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
       --page: #f7f8f8;
       --surface: #ffffff;
       --surface-muted: #f3f5f4;
@@ -122,21 +121,6 @@
     .nav a:hover {
       color: var(--accent);
       text-decoration: none;
-    }
-
-    .nav a.is-active {
-      color: var(--accent);
-    }
-
-    .nav a.is-active::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 2px;
-      border-radius: 2px;
-      background: var(--accent);
     }
 
     .brand:focus-visible,
@@ -373,7 +357,7 @@
       padding: 7px 12px;
       background: #fbfaf7;
       color: #2f342f;
-      font-family: var(--font-mono);
+      font-family: var(--font-sans);
       font-size: 0.88rem;
       font-weight: 600;
       transition: border-color 0.18s ease, transform 0.18s ease;
@@ -388,7 +372,7 @@
     kbd,
     pre,
     samp {
-      font-family: var(--font-mono);
+      font-family: var(--font-sans);
     }
 
     .contact-grid {
@@ -831,29 +815,6 @@
             });
           }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
           sections.forEach(function (el) { revealObserver.observe(el); });
-        }
-
-        // Active-section highlight in nav
-        var linkById = {};
-        Array.prototype.slice.call(document.querySelectorAll(".nav a")).forEach(function (a) {
-          var id = (a.getAttribute("href") || "").replace("#", "");
-          var target = id && document.getElementById(id);
-          if (target) linkById[id] = a;
-        });
-        if (supportsIO) {
-          var activeLink = null;
-          var spyObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting && linkById[entry.target.id]) {
-                if (activeLink) activeLink.classList.remove("is-active");
-                activeLink = linkById[entry.target.id];
-                activeLink.classList.add("is-active");
-              }
-            });
-          }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
-          Object.keys(linkById).forEach(function (id) {
-            spyObserver.observe(document.getElementById(id));
-          });
         }
       } catch (e) {
         // If anything goes wrong, never leave content hidden.
