@@ -11,10 +11,15 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.byfelix.xyz/" />
   <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <title>LI Zhuofei</title>
   <style>
     :root {
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
       --page: #f7f8f8;
       --surface: #ffffff;
       --surface-muted: #f3f5f4;
@@ -41,7 +46,7 @@
         linear-gradient(180deg, #ffffff 0, var(--page) 360px),
         var(--page);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--font-sans);
       line-height: 1.55;
     }
 
@@ -159,8 +164,8 @@
     h1 {
       margin: 0;
       color: var(--text);
-      font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(2.4rem, 5vw, 4.7rem);
+      font-weight: 820;
       line-height: 0.98;
       letter-spacing: 0;
     }
@@ -335,8 +340,16 @@
       padding: 7px 12px;
       background: #fbfaf7;
       color: #2f342f;
+      font-family: var(--font-mono);
       font-size: 0.88rem;
-      font-weight: 760;
+      font-weight: 600;
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: var(--font-mono);
     }
 
     .contact-grid {
@@ -527,13 +540,12 @@
             </div>
             <div class="entry-content">
               <h3 class="entry-title">Analyst Intern</h3>
-              <p class="entry-subtitle">CAS Investment Management</p>
-              <p class="entry-meta">Jun 2026</p>
-              <p class="entry-note">PE/VC investment platform focused on early-stage frontier technology companies.</p>
+              <p class="entry-subtitle">CAS Investment Management &middot; Jun 2026</p>
+              <p class="entry-note"><em>An early-stage PE/VC firm specializing in frontier technology.</em></p>
               <ul class="bullet-list">
-                <li>Supported pre-investment research for an airborne SAR radar company&apos;s Series B financing, including company background research and management interviews.</li>
-                <li>Participated in portfolio follow-ups and shareholder meetings for companies in perovskite photovoltaics and RSV vaccine development.</li>
-                <li>Developed familiarity with PE/VC workflows across investment diligence, post-investment monitoring, shareholder governance, equity restructuring, and cross-border IPO planning.</li>
+                <li>Participated in management interviews for a prospective Series B airborne synthetic-aperture radar (SAR) investment, supported by prior corporate background research.</li>
+                <li>Attended post-investment follow-ups and shareholder meetings across perovskite photovoltaic and RSV vaccine portfolio companies, gaining exposure to follow-on financing discussions.</li>
+                <li>Developed foundational knowledge of the full PE/VC investment cycle&mdash;from deal evaluation and management interviews through post-investment management, shareholder governance, and pre-IPO preparation&mdash;via hands-on participation and self-directed learning.</li>
               </ul>
             </div>
           </article>
