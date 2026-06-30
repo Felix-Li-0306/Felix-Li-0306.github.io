@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#f7f8f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0c100f" media="(prefers-color-scheme: dark)" />
   <meta name="description" content="LI Zhuofei: HKU Statistics student focused on Decision Analytics, applied AI, and technical product work." />
   <meta name="author" content="LI Zhuofei" />
   <meta property="og:title" content="LI Zhuofei" />
@@ -16,6 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <title>LI Zhuofei</title>
+  <script>document.documentElement.classList.add("js");</script>
   <style>
     :root {
       --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -53,6 +55,7 @@
     a {
       color: var(--accent);
       text-decoration: none;
+      transition: color 0.15s ease;
     }
 
     a:hover {
@@ -90,6 +93,7 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      transition: color 0.15s ease;
     }
 
     .nav {
@@ -108,13 +112,31 @@
     }
 
     .nav a {
+      position: relative;
       color: var(--muted);
       white-space: nowrap;
+      padding-bottom: 3px;
+      transition: color 0.18s ease;
     }
 
     .nav a:hover {
       color: var(--accent);
       text-decoration: none;
+    }
+
+    .nav a.is-active {
+      color: var(--accent);
+    }
+
+    .nav a.is-active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--accent);
     }
 
     .brand:focus-visible,
@@ -162,12 +184,23 @@
     }
 
     h1 {
+      position: relative;
       margin: 0;
       color: var(--text);
       font-size: clamp(2.4rem, 5vw, 4.7rem);
       font-weight: 820;
       line-height: 0.98;
       letter-spacing: 0;
+    }
+
+    h1::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      margin-top: 20px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), rgba(155, 116, 37, 0.92));
     }
 
     .metrics {
@@ -343,6 +376,12 @@
       font-family: var(--font-mono);
       font-size: 0.88rem;
       font-weight: 600;
+      transition: border-color 0.18s ease, transform 0.18s ease;
+    }
+
+    .skill:hover {
+      border-color: rgba(15, 77, 63, 0.4);
+      transform: translateY(-1px);
     }
 
     code,
@@ -369,11 +408,14 @@
       padding: 12px;
       color: var(--text);
       background: var(--surface-muted);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .contact-link:hover {
       border-color: rgba(15, 77, 63, 0.36);
       text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(17, 19, 21, 0.1);
     }
 
     .contact-icon {
@@ -407,6 +449,19 @@
       overflow-wrap: anywhere;
       color: var(--text);
       font-weight: 750;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html.js .page > section {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      html.js .page > section.is-visible {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     @media (max-width: 760px) {
@@ -477,6 +532,86 @@
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #0c100f;
+        --surface: #141a18;
+        --surface-muted: #1a201e;
+        --text: #e9edeb;
+        --muted: #9aa6a1;
+        --subtle: #75817c;
+        --line: #29302d;
+        --accent: #57c9a6;
+        --accent-dark: #7bdcc0;
+        --shadow: 0 24px 54px rgba(0, 0, 0, 0.55);
+      }
+
+      body {
+        background:
+          linear-gradient(180deg, #141a18 0, var(--page) 360px),
+          var(--page);
+      }
+
+      .topbar {
+        background: rgba(16, 21, 20, 0.82);
+        border-bottom-color: rgba(41, 48, 45, 0.9);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      }
+
+      .section {
+        background: rgba(20, 26, 24, 0.86);
+        border-color: rgba(41, 48, 45, 0.7);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.4);
+      }
+
+      .profile {
+        background:
+          linear-gradient(135deg, rgba(87, 201, 166, 0.16), rgba(196, 156, 70, 0.12) 42%, rgba(255, 255, 255, 0) 72%),
+          var(--surface);
+      }
+
+      .metrics {
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .entry-mark {
+        background: rgba(87, 201, 166, 0.12);
+      }
+
+      .entry-subtitle {
+        color: #cbd4d0;
+      }
+
+      .skill {
+        border-color: #303a36;
+        background: #181e1c;
+        color: #ccd5d1;
+      }
+
+      .skill:hover {
+        border-color: rgba(87, 201, 166, 0.5);
+      }
+
+      .skill-group h3 {
+        color: #cbd4d0;
+      }
+
+      .contact-icon {
+        background: rgba(87, 201, 166, 0.14);
+      }
+
+      .contact-link:hover {
+        border-color: rgba(87, 201, 166, 0.5);
+        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
+      }
+
+      .brand:focus-visible,
+      .nav a:focus-visible,
+      .contact-link:focus-visible {
+        outline-color: rgba(87, 201, 166, 0.55);
       }
     }
   </style>
@@ -675,5 +810,56 @@
     </section>
   </main>
 
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var sections = Array.prototype.slice.call(document.querySelectorAll(".page > section"));
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var supportsIO = "IntersectionObserver" in window;
+
+        // Scroll reveal
+        if (reduce || !supportsIO) {
+          sections.forEach(function (el) { el.classList.add("is-visible"); });
+        } else {
+          var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+          sections.forEach(function (el) { revealObserver.observe(el); });
+        }
+
+        // Active-section highlight in nav
+        var linkById = {};
+        Array.prototype.slice.call(document.querySelectorAll(".nav a")).forEach(function (a) {
+          var id = (a.getAttribute("href") || "").replace("#", "");
+          var target = id && document.getElementById(id);
+          if (target) linkById[id] = a;
+        });
+        if (supportsIO) {
+          var activeLink = null;
+          var spyObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting && linkById[entry.target.id]) {
+                if (activeLink) activeLink.classList.remove("is-active");
+                activeLink = linkById[entry.target.id];
+                activeLink.classList.add("is-active");
+              }
+            });
+          }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+          Object.keys(linkById).forEach(function (id) {
+            spyObserver.observe(document.getElementById(id));
+          });
+        }
+      } catch (e) {
+        // If anything goes wrong, never leave content hidden.
+        root.classList.remove("js");
+      }
+    })();
+  </script>
 </body>
 </html>
