@@ -11,7 +11,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.byfelix.xyz/" />
   <meta name="twitter:card" content="summary" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <title>LI Zhuofei</title>
   <style>
     :root {
@@ -24,7 +24,6 @@
       --line: #d8dddc;
       --accent: #0f4d3f;
       --accent-dark: #0a362d;
-      --gold: #9b7425;
       --shadow: 0 24px 54px rgba(17, 19, 21, 0.08);
     }
 
@@ -62,7 +61,9 @@
       z-index: 5;
       border-bottom: 1px solid rgba(216, 221, 220, 0.92);
       background: rgba(255, 255, 255, 0.9);
+      -webkit-backdrop-filter: blur(14px);
       backdrop-filter: blur(14px);
+      box-shadow: 0 8px 24px rgba(17, 19, 21, 0.035);
     }
 
     .topbar-inner {
@@ -97,6 +98,10 @@
       text-transform: uppercase;
     }
 
+    .nav::-webkit-scrollbar {
+      display: none;
+    }
+
     .nav a {
       color: var(--muted);
       white-space: nowrap;
@@ -105,6 +110,14 @@
     .nav a:hover {
       color: var(--accent);
       text-decoration: none;
+    }
+
+    .brand:focus-visible,
+    .nav a:focus-visible,
+    .contact-link:focus-visible {
+      outline: 2px solid rgba(15, 77, 63, 0.36);
+      outline-offset: 4px;
+      border-radius: 6px;
     }
 
     .page {
@@ -120,6 +133,11 @@
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.86);
       box-shadow: 0 18px 42px rgba(17, 19, 21, 0.045);
+    }
+
+    .profile,
+    .section {
+      scroll-margin-top: 88px;
     }
 
     .profile {
@@ -385,18 +403,21 @@
       }
 
       .topbar-inner {
-        min-height: auto;
-        padding: 14px 0;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 12px;
+        min-height: 58px;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand {
+        flex: 0 0 auto;
       }
 
       .nav {
-        width: 100%;
+        flex: 1 1 auto;
+        min-width: 0;
         justify-content: flex-start;
         overflow-x: auto;
-        padding-bottom: 2px;
+        scrollbar-width: none;
       }
 
       .profile-body {
