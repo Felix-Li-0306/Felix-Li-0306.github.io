@@ -36,7 +36,7 @@ This page is deliberately styled to read as a **real, human-typeset document** â
 
 **Layout**
 - One continuous sheet (`<main class="page">`), not a stack of separately bordered/shadowed cards. Sections are divided by simple hairline `border-top` rules, not individual card chrome.
-- Narrow column (~720px), not a wide dashboard. This is a personal page, not a SaaS landing page.
+- Narrow column (~780px), not a wide dashboard. This is a personal page, not a SaaS landing page.
 - No box-shadow-heavy "floating card" look â€” keep shadows flat and minimal (`--shadow` is a tight, low-blur lift, not a soft glow).
 
 **Typography**
