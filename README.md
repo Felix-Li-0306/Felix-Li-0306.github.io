@@ -10,7 +10,6 @@ This repository contains a lightweight static personal profile built with plain 
 
 - `index.html` - the full single-page professional profile, including inline styles.
 - `favicon.svg` - browser tab icon for the site.
-- `avatar.png` - unused image asset retained in the repository.
 - `CNAME` - custom domain configuration for GitHub Pages.
 
 ## Features
