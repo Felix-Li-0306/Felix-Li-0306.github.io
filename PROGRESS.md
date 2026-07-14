@@ -19,7 +19,7 @@ Maintain the published personal profile while preserving its current content acc
 
 ## In Progress
 
-- None.
+- Final browser-based visual comparison for the profile metrics and Capabilities/Contact column alignment.
 
 ## Next Steps
 
@@ -36,11 +36,15 @@ Maintain the published personal profile while preserving its current content acc
 
 ## Known Issues and Blockers
 
-- No known blockers.
+- The in-app browser preview cannot initialize because Browser plugin `26.707.71524` attempts to replace the runtime's locked `process` object before browser setup begins. Restart Codex Desktop, then update or reinstall the Browser plugin if the error persists; final browser-rendered comparison remains pending.
 - The page loads fonts from Google Fonts, so the exact typography depends on network access; system fallbacks are defined.
 
 ## Verification Status
 
+- HTML parser and internal/local reference check after the layout update — passed; all 12 references resolve.
+- `git diff --check` after the layout update — passed.
+- macOS rendered preview — passed for the profile metrics; the four content-width columns show equal distributed whitespace.
+- Browser-rendered desktop/mobile comparison for the Capabilities and Contact sections — blocked by a confirmed Browser plugin/runtime compatibility conflict before browser setup; static grid inspection confirms both sections use the same `140px + 16px` desktop column line.
 - `.gitignore` and `git check-ignore -v AGENTS.md PROGRESS.md` — passed; neither project document is ignored, so both remain eligible for version control.
 - `rg -n -i "minor in finance|finance minor|minor" index.html` — passed; no Finance minor reference remains.
 - Local preview on `127.0.0.1:8000` — passed; `/` returned `200 OK` and displays `Professional Core: Decision Analytics`.
@@ -52,6 +56,7 @@ Maintain the published personal profile while preserving its current content acc
 
 ## Recent Changes
 
+- 2026-07-14: Rebalanced the four profile metrics with equal distributed whitespace and aligned Contact values to the Capabilities value column; final browser QA remains pending.
 - 2026-07-14: Renamed the Decision Analytics label from `Major` to `Professional Core` in both profile and education sections.
 - 2026-07-14: Confirmed that `AGENTS.md` and `PROGRESS.md` should be version-controlled and remain outside `.gitignore`.
 - 2026-07-14: Removed the Finance minor reference from the HKU education entry.
