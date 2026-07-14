@@ -43,7 +43,7 @@ Maintain the published personal profile while preserving its current content acc
 
 - `.gitignore` and `git check-ignore -v AGENTS.md PROGRESS.md` — passed; neither project document is ignored, so both remain eligible for version control.
 - `rg -n -i "minor in finance|finance minor|minor" index.html` — passed; no Finance minor reference remains.
-- Local preview on `127.0.0.1:8000` — passed; `/` returned `200 OK` and displays `Major: Decision Analytics`.
+- Local preview on `127.0.0.1:8000` — passed; `/` returned `200 OK` and displays `Professional Core: Decision Analytics`.
 - `git status --short --branch` — passed before initialization; working tree was clean on `main` and aligned with `origin/main`.
 - `git diff --check` — passed before initialization.
 - `git diff --check` — passed after initialization.
@@ -52,6 +52,7 @@ Maintain the published personal profile while preserving its current content acc
 
 ## Recent Changes
 
+- 2026-07-14: Renamed the Decision Analytics label from `Major` to `Professional Core` in both profile and education sections.
 - 2026-07-14: Confirmed that `AGENTS.md` and `PROGRESS.md` should be version-controlled and remain outside `.gitignore`.
 - 2026-07-14: Removed the Finance minor reference from the HKU education entry.
 - 2026-07-14: Initialized `AGENTS.md` and `PROGRESS.md`, removed the approved unused `avatar.png`, and preserved the remaining root-level site structure without renames or file moves.
