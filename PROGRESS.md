@@ -1,6 +1,6 @@
 # Project Progress
 
-Last updated: 2026-07-14
+Last updated: 2026-08-06
 Current phase: Maintenance
 Project status: Operational static site; project guidance initialized
 
@@ -56,6 +56,7 @@ Maintain the published personal profile while preserving its current content acc
 
 ## Recent Changes
 
+- 2026-08-06: Changed Professional Core from Decision Analytics to Statistics in both the profile metrics and the HKU education entry, and added a Computer Science minor to the education entry. Browser QA passed at desktop and mobile widths in light and dark appearance via the `static-site` local preview.
 - 2026-07-14: Rebalanced the four profile metrics with equal distributed whitespace and aligned Contact values to the Capabilities value column; final browser QA remains pending.
 - 2026-07-14: Renamed the Decision Analytics label from `Major` to `Professional Core` in both profile and education sections.
 - 2026-07-14: Confirmed that `AGENTS.md` and `PROGRESS.md` should be version-controlled and remain outside `.gitignore`.
