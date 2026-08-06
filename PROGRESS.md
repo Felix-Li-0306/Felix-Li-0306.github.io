@@ -56,6 +56,9 @@ Maintain the published personal profile while preserving its current content acc
 
 ## Recent Changes
 
+- 2026-08-06: Reordered the page so Education appears above Experience, and reordered the topbar nav links to match. Section dividers adapt automatically (adjacency-based). Verified in the desktop preview; `git diff --check` clean.
+- 2026-08-06: Changed the contact email from lizhuofei0306@outlook.com to the HKU address lizhuofei@connect.hku.hk (both the `mailto:` link and the visible value). Verified the served `mailto:` href and the rendered value in the desktop preview.
+- 2026-08-06: Added a second Project entry for the HKU COMP2113 group project *Shelter Seconds* (C++ terminal survival game, group leader, Mar–May 2026) with a link to its GitHub repository, and wrapped both Project entries in a `<div class="entry-list">` so the section matches the Experience/Education entry rhythm. Copy kept factual to the repo; leadership stated as the owner's own account. Browser QA passed at mobile width in light and dark; the new entry reuses the already-verified Education `.entry-list` divider/spacing pattern (a true desktop-width screenshot was not capturable because the local preview pane does not render a viewport wider than its native size).
 - 2026-08-06: Changed Professional Core from Decision Analytics to Statistics in both the profile metrics and the HKU education entry, and added a Computer Science minor to the education entry. Browser QA passed at desktop and mobile widths in light and dark appearance via the `static-site` local preview.
 - 2026-07-14: Rebalanced the four profile metrics with equal distributed whitespace and aligned Contact values to the Capabilities value column; final browser QA remains pending.
 - 2026-07-14: Renamed the Decision Analytics label from `Major` to `Professional Core` in both profile and education sections.
