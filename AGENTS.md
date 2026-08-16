@@ -10,6 +10,7 @@ This repository hosts LI Zhuofei's single-page professional profile at `www.byfe
 - `index.html` is the complete site and must remain at the repository root for GitHub Pages.
 - `favicon.svg` is the active browser icon.
 - `CNAME` configures the custom domain and must remain at the repository root.
+- `CV/` is a symlink to `../CV`, a separate private repository. It is git-ignored and must never be committed: this repository is public and GitHub Pages serves everything tracked in it, while the CV files contain contact details the site does not publish.
 - `.claude/` is ignored local tooling configuration, not deployed site content.
 
 ## Local Preview

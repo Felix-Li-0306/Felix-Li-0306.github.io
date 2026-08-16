@@ -1,2 +1,6 @@
 .DS_Store
 .claude/
+
+# Symlink to the separate private CV repo (../CV). Never commit it — this repo
+# is public and GitHub Pages would serve anything tracked here.
+/CV

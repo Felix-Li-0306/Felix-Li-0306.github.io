@@ -15,6 +15,7 @@ manager, no build step, no dependencies**. `index.html` *is* the site.
 | `index.html` | The entire site: markup + inline `<style>`. Must stay at repo root. |
 | `favicon.svg` | Active browser icon. Referenced from `index.html`. |
 | `CNAME` | Custom domain (`www.byfelix.xyz`). Must stay at repo root — deleting it breaks the domain. |
+| `CV/` | **Symlink to `../CV`**, a *separate private* repo (`Felix-Li-0306/CV`) holding the résumé sources and generated PDF/DOCX. Git-ignored via `/CV` — **never commit it or its contents**. This repo is public and GitHub Pages serves everything tracked here, and the CV files carry a phone number (the Chinese ones an address) that the site does not publish. |
 | `README.md` | **Authoritative design constraints.** Read before any UI change. |
 | `AGENTS.md` | Shared agent instructions (same rules, tool-agnostic). Keep in sync with this file. |
 | `PROGRESS.md` | Cross-session handoff state. Update after substantial work. |
