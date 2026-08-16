@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository hosts LI Zhuofei's single-page professional profile at `www.byfelix.xyz`. Preserve its lightweight, document-like presentation and keep content claims accurate.
+This repository hosts LI Zhuofei's single-page professional profile at `me.byfelix.xyz`. Preserve its lightweight, document-like presentation and keep content claims accurate.
 
 ## Technology and Structure
 

@@ -5,7 +5,7 @@ Guidance for Claude Code when working in this repository.
 ## What this is
 
 A single-page professional profile for LI Zhuofei, served by GitHub Pages at
-`www.byfelix.xyz`. Plain HTML with inline CSS — **no JavaScript, no package
+`me.byfelix.xyz`. Plain HTML with inline CSS — **no JavaScript, no package
 manager, no build step, no dependencies**. `index.html` *is* the site.
 
 ## Files
@@ -14,7 +14,7 @@ manager, no build step, no dependencies**. `index.html` *is* the site.
 | --- | --- |
 | `index.html` | The entire site: markup + inline `<style>`. Must stay at repo root. |
 | `favicon.svg` | Active browser icon. Referenced from `index.html`. |
-| `CNAME` | Custom domain (`www.byfelix.xyz`). Must stay at repo root — deleting it breaks the domain. |
+| `CNAME` | Custom domain (`me.byfelix.xyz`). Must stay at repo root — deleting it breaks the domain. |
 | `CV/` | **Symlink to `../CV`**, a *separate private* repo (`Felix-Li-0306/CV`) holding the résumé sources and generated PDF/DOCX. Git-ignored via `/CV` — **never commit it or its contents**. This repo is public and GitHub Pages serves everything tracked here, and the CV files carry a phone number (the Chinese ones an address) that the site does not publish. |
 | `README.md` | **Authoritative design constraints.** Read before any UI change. |
 | `AGENTS.md` | Shared agent instructions (same rules, tool-agnostic). Keep in sync with this file. |
@@ -91,7 +91,8 @@ If a change would make the page look more like a web-app template, don't add it 
 
 ## Verification before committing
 
-1. Confirm internal anchors and local asset references resolve (12 total today).
+1. Confirm internal anchors and local asset references resolve (13 refs today: 6
+   internal anchors, `favicon.svg`, 6 external/mailto).
 2. Preview at desktop and mobile widths; check light *and* dark appearance.
 3. `git diff --check`, then read the full diff.
 4. Update `PROGRESS.md` with what changed and the verification results.
