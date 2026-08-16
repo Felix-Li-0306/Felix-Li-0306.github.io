@@ -1,6 +1,6 @@
 # Project Progress
 
-Last updated: 2026-08-06
+Last updated: 2026-08-16
 Current phase: Maintenance
 Project status: Operational static site; project guidance initialized
 
@@ -56,6 +56,7 @@ Maintain the published personal profile while preserving its current content acc
 
 ## Recent Changes
 
+- 2026-08-16: Qualified the Technical capability chip as `Python (NumPy)` at the owner's instruction (owner chose the in-chip form over separate library chips). Browser QA passed via the `static-site` preview at desktop width in dark appearance and mobile width in light appearance; the chip wraps normally in the flex list (129px wide at desktop) and no grid alignment changed.
 - 2026-08-06: Reordered the page so Education appears above Experience, and reordered the topbar nav links to match. Section dividers adapt automatically (adjacency-based). Verified in the desktop preview; `git diff --check` clean.
 - 2026-08-06: Changed the contact email from lizhuofei0306@outlook.com to the HKU address lizhuofei@connect.hku.hk (both the `mailto:` link and the visible value). Verified the served `mailto:` href and the rendered value in the desktop preview.
 - 2026-08-06: Added a second Project entry for the HKU COMP2113 group project *Shelter Seconds* (C++ terminal survival game, group leader, Mar–May 2026) with a link to its GitHub repository, and wrapped both Project entries in a `<div class="entry-list">` so the section matches the Experience/Education entry rhythm. Copy kept factual to the repo; leadership stated as the owner's own account. Browser QA passed at mobile width in light and dark; the new entry reuses the already-verified Education `.entry-list` divider/spacing pattern (a true desktop-width screenshot was not capturable because the local preview pane does not render a viewport wider than its native size).
