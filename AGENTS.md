@@ -109,8 +109,8 @@ If a change would make the page look more like a web-app template, don't add it 
 
 ## Verification before committing
 
-1. Confirm internal anchors and local asset references resolve (13 refs today: 6
-   internal anchors, `favicon.svg`, 6 external/mailto), with no missing local
+1. Confirm internal anchors and local asset references resolve (15 refs today: 6
+   internal anchors, `favicon.svg`, 8 external/mailto), with no missing local
    assets or HTML parsing errors.
 2. Preview at desktop and mobile widths; check light *and* dark appearance.
 3. `git diff --check`, then read the full diff.
