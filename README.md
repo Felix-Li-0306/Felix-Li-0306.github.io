@@ -39,7 +39,7 @@ This page is deliberately styled to read as a **real, human-typeset document** �
 - No box-shadow-heavy "floating card" look — keep shadows flat and minimal (`--shadow` is a tight, low-blur lift, not a soft glow).
 
 **Typography**
-- Serif (`Fraunces`) is reserved **only** for the name (`h1`) and the topbar brand — a personal signature, used sparingly. Every other text element (section headers, entry titles, metric values, body copy) uses sans (`Inter`). Do not spread the serif to more elements — "everything is fancy serif" is a template tell.
+- Serif (`EB Garamond`) is reserved **only** for the name (`h1`) and the topbar brand — a personal signature, used sparingly. Every other text element (section headers, entry titles, metric values, body copy) uses sans (`Inter`). Do not spread the serif to more elements — "everything is fancy serif" is a template tell.
 - No numbered section kickers ("01 / 02 / 03..."). No gradient accent bars. No gold/amber secondary accent color — one restrained accent only (`--accent`, deep emerald).
 
 **Color**

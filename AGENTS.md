@@ -55,7 +55,9 @@ not by individual cards.
 `README.md` holds the full rationale. The short version: this page must read as a
 **hand-typeset personal document**, not a generated portfolio template.
 
-- Serif (`Fraunces`) is only for `h1` and `.brand`. Everything else is `Inter`.
+- Serif (`EB Garamond`) is only for `h1` and `.brand`. Everything else is `Inter`.
+  Both are set in all caps with positive tracking (`h1` +0.07em, `.brand` +0.08em)
+  — negative tracking on caps reads cramped, not formal. Keep it positive.
 - One accent color (`--accent`, deep emerald). No second accent, no gradients.
 - Cool gray page background — never warm cream/ivory.
 - No scroll animations, no per-entry icon badges, no numbered section kickers
