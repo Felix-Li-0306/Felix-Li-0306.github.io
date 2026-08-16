@@ -1,6 +1,6 @@
 # Felix-Li-0306.github.io
 
-Professional personal profile for LI Zhuofei, published with GitHub Pages at [me.byfelix.xyz](https://me.byfelix.xyz/).
+Professional personal profile for LI Zhuofei, published with GitHub Pages at [lizhuofei.com](https://lizhuofei.com/).
 
 ## Overview
 

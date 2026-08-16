@@ -6,7 +6,7 @@ symlink to this file — edit this one, never the symlink.
 ## What this is
 
 A single-page professional profile for LI Zhuofei, served by GitHub Pages at
-`me.byfelix.xyz`. Plain HTML with inline CSS — **no JavaScript, no package
+`lizhuofei.com`. Plain HTML with inline CSS — **no JavaScript, no package
 manager, no build step, no dependencies**. `index.html` *is* the site.
 
 ## Files
@@ -15,7 +15,7 @@ manager, no build step, no dependencies**. `index.html` *is* the site.
 | --- | --- |
 | `index.html` | The entire site: markup + inline `<style>`. Must stay at repo root. |
 | `favicon.svg` | Active browser icon. Referenced from `index.html`. |
-| `CNAME` | Custom domain (`me.byfelix.xyz`). Must stay at repo root — deleting it breaks the domain. |
+| `CNAME` | Custom domain (`lizhuofei.com`). Must stay at repo root — deleting it breaks the domain. A Pages site can hold exactly one custom domain; the former `me.byfelix.xyz` now redirects here. |
 | `CV/` | **Symlink to `../CV`**, a *separate private* repo (`Felix-Li-0306/CV`) holding the résumé sources and generated PDF/DOCX. Git-ignored via `/CV` — **never commit it or its contents**. This repo is public and GitHub Pages serves everything tracked here, and the CV files carry a phone number (the Chinese ones an address) that the site does not publish. |
 | `README.md` | **Authoritative design constraints.** Read before any UI change. |
 | `CLAUDE.md` | **Symlink to `AGENTS.md`** (git mode `120000`), so both names resolve to this one file. Never write through it. |
