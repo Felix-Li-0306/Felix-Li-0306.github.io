@@ -90,10 +90,14 @@ If a change would make the page look more like a web-app template, don't add it 
   Every section follows this, so the first line is always the *what*, not the *who*.
 - Date format: single month (`Jun 2026`) or a range with an en dash
   (`Sep 2025&ndash;Present`, `Mar 2026&ndash;May 2026`). Day-level precision is used
-  only where the exact window is the point &mdash; currently just the PKUSSI summer
+  only where the exact window is the point, currently just the PKUSSI summer
   school (`Jul 6&ndash;31, 2026`). Internships stay at month level.
-- Copy uses HTML entities (`&ndash;`, `&mdash;`, `&times;`) rather than literal
-  characters. Match that.
+- Copy uses HTML entities (`&ndash;`, `&times;`) rather than literal characters.
+  Match that.
+- **No em dashes in page copy.** The owner asked for them removed, so `&mdash;` and
+  a literal `—` appear nowhere in `index.html` and must not come back. A colon,
+  parentheses, or a reworked sentence carries the same break. The en dash in date
+  ranges is a different mark and stays.
 - Keep dates and entry structure consistent across Experience, Education, and
   Project — and consistent with the CV repo, which describes the same entries.
 - **Do not strengthen claims** about roles, ownership, or outcomes without the
