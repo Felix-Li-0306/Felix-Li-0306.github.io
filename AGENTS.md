@@ -44,8 +44,8 @@ static unless the owner explicitly approves a technology change.
 Sticky `.topbar` (brand + nav) over one continuous sheet `<main class="page">`.
 Section IDs, in order — nav links point at these:
 
-`#profile` · `#experience` · `#education` · `#project` · `#skills` (labeled
-"Capabilities") · `#contact`
+`#profile` · `#experience` · `#education` · `#project` (labeled "Projects") ·
+`#skills` (labeled "Capabilities") · `#contact`
 
 Sections are separated by `border-top` hairlines via `.page > section + section`,
 not by individual cards.
@@ -83,8 +83,13 @@ If a change would make the page look more like a web-app template, don't add it 
 
 - Keep `.role`, `<meta name="description">`, and `og:description` in sync — all
   three currently carry the same sentence.
-- Date format: `.entry-subtitle` = org or degree only; `.entry-meta` = the date.
-  Single month (`Jun 2026`) or range with an en dash (`Sep 2025&ndash;Present`).
+- Entry shape: `.entry-title` = the organisation, institution, or project;
+  `.entry-subtitle` = the role, degree, or location; `.entry-meta` = the date.
+  Every section follows this, so the first line is always the *what*, not the *who*.
+- Date format: single month (`Jun 2026`) or a range with an en dash
+  (`Sep 2025&ndash;Present`, `Mar 2026&ndash;May 2026`). Day-level precision is used
+  only where the exact window is the point &mdash; currently just the PKUSSI summer
+  school (`Jul 6&ndash;31, 2026`). Internships stay at month level.
 - Copy uses HTML entities (`&ndash;`, `&mdash;`, `&times;`) rather than literal
   characters. Match that.
 - Keep dates and entry structure consistent across Experience, Education, and
