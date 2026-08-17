@@ -15,6 +15,7 @@ manager, no build step, no dependencies**. `index.html` *is* the site.
 | --- | --- |
 | `index.html` | The entire site: markup + inline `<style>`. Must stay at repo root. |
 | `favicon.svg` | Active browser icon. Referenced from `index.html`. |
+| `cv.pdf` | Published CV, linked from the Contact section. **It must always be the `Public` variant built by the CV repo** (`output/pdf/LI_ZHUOFEI_Resume_Public_2026.pdf`), which is the standard English CV with the phone number stripped. Never copy a Standard or Print deliverable here — those print a phone number, and this repo is public. Refresh it whenever the CV changes, and re-check with `pdftotext cv.pdf - \| grep -E '\+852\|\+86'` before committing. |
 | `CNAME` | Custom domain (`lizhuofei.com`). Must stay at repo root — deleting it breaks the domain. A Pages site can hold exactly one custom domain; the former `me.byfelix.xyz` now redirects here. |
 | `CV/` | **Symlink to `../CV`**, a *separate private* repo (`Felix-Li-0306/CV`) holding the résumé sources and generated PDF/DOCX. Git-ignored via `/CV` — **never commit it or its contents**. This repo is public and GitHub Pages serves everything tracked here, and the CV files carry a phone number (the Chinese ones an address) that the site does not publish. |
 | `README.md` | **Authoritative design constraints.** Read before any UI change. |
@@ -109,9 +110,9 @@ If a change would make the page look more like a web-app template, don't add it 
 
 ## Verification before committing
 
-1. Confirm internal anchors and local asset references resolve (15 refs today: 6
-   internal anchors, `favicon.svg`, 8 external/mailto), with no missing local
-   assets or HTML parsing errors.
+1. Confirm internal anchors and local asset references resolve (16 refs today: 6
+   internal anchors, `favicon.svg`, `cv.pdf`, 8 external/mailto), with no missing
+   local assets or HTML parsing errors.
 2. Preview at desktop and mobile widths; check light *and* dark appearance.
 3. `git diff --check`, then read the full diff.
 4. Update `PROGRESS.md` with what changed and the verification results.
